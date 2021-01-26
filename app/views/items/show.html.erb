@@ -1,0 +1,6 @@
+<h1><%= @item.name %></h1>
+<p>Description: <%= @item.description %></p>
+<p>Price: $<%= @item.price.round(2) %></p>
+<p><%= link_to "Back to search", category_path(@item.category) %></p>
+<p>Need to add a add to cart button / add to favorites</p>
+
