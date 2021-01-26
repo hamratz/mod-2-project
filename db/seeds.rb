@@ -8,16 +8,19 @@
 
 User.destroy_all
 Item.destroy_all
-Cart.destroy_all
 Favorite.destroy_all
+Category.destroy_all
 
 james = User.create(name: "James")
 
-apple = Item.create(name: "Apple")
-banana = Item.create(name: "Banana")
-chip = Item.create(name: "Chip")
+sweet = Category.create(name: "Sweet")
+savory = Category.create(name: "Savory")
 
-cart1 = Cart.create(item_id: apple, user_id: james)
+apple = Item.create(name: "Apple", category_id: sweet.id)
+banana = Item.create(name: "Banana", category_id: sweet.id)
+chip = Item.create(name: "Chip", category_id: savory.id)
 
-fav1 = Favorite.create(user_id: james, item_id: banana)
-fav2 = Favorite.create(user_id: james, item_id: chip)
+
+
+fav1 = Favorite.create(user_id: james.id, item_id: banana.id)
+fav2 = Favorite.create(user_id: james.id, item_id: chip.id)

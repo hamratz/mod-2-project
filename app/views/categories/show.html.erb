@@ -1,0 +1,6 @@
+<h1><%= @category.name %></h1>
+<%@category.items.each do |item|%>
+<ul>
+<h3><li><%= item.name %></li></h3>
+</ul>
+<%end%>

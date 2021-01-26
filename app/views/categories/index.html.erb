@@ -1,0 +1,9 @@
+<h1>Homepage</h1>
+<p>User would select b/w sweet and savory.
+Need to include form to link to either sweet or savory</p>
+
+<% @categories.each do |cat| %>
+<ul>
+<li><%= link_to cat.name, category_path(cat)%></li>
+</ul>
+<%end%>
