@@ -6,4 +6,11 @@ class FavoritesController < ApplicationController
     
     def show
     end
+
+    def destroy
+        Favorite.find(params[:id]).destroy
+        redirect_to user_path(params[:user_id])
+    end
+
+
 end
