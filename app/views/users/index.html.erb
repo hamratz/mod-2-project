@@ -1,1 +1,8 @@
 <p>User's login page: Routes to user's show page. Why "?" in URL</p>
+<ul>
+<% @users.each do |user| %>
+   <li><%= link_to user.name, user_path(user) %></li>
+
+   <% end %>
+
+</ul>

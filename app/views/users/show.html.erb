@@ -1,2 +1,15 @@
+
+
+<h1>Hello, <%= @user.name %></h1>
+
+<%= link_to "edit profile", edit_user_path(@user) %>
+<p>Your Favorites!</p>
+<ul>
+<% @user.items.each do |item| %>
+    <li><%= item.name %></li>
+
+<% end %>
+</ul>
+
 <p>User's show page,. User can also edit profile</p>
 <p>User can also delete their profile</p>
