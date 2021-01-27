@@ -16,11 +16,7 @@ class ApplicationController < ActionController::Base
     @cart_items = Item.find(cart)
   end
 
-  def cart_total
-   @cart_items.map do |item|
-      item.price
-   end.sum(0.0)
-  end
+
 
 
 end

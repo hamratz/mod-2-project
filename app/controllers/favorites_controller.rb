@@ -5,6 +5,7 @@ class FavoritesController < ApplicationController
     # end
 
     def create
+        byebug
         @favorite = Favorite.new(favorite_params)
         if @favorite.save
             puts "Yay! You've got a new Crave!"
