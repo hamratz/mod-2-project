@@ -1,6 +1,6 @@
 <h1><%= @item.name %></h1>
 <p>Description: <%= @item.description %></p>
-<p>Price: $<%= @item.price.round(2) %></p>
+<p>Price: $<%= @item.price %></p>
 
 
 <%= button_to "Add to Cart", add_to_cart_path, method: :patch, params: { item_id: @item.id, name: @item.name } %><br>

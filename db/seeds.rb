@@ -23,7 +23,7 @@ savory = Category.create(name: "Savory")
 category_id = Category.all.map { |category| category.id }
 
 10.times do
-    Item.create(name: Faker::Food.dish, description: Faker::Food.description, price:rand(1.25..30.0), category_id: category_id.sample)
+    Item.create(name: Faker::Food.dish, description: Faker::Food.description, price:rand(1.25..30.0).round(2), category_id: category_id.sample)
 end
 
 item_id = Item.all.map { |item| item.id }
