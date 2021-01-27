@@ -17,6 +17,7 @@
           <li><%= cart_item.name %></li>
       <% end %>
     <p><%= button_to "Login", users_path, method: "get"%></p>
+    <p><%= button_to "Create Profile", users_path, method: "get"%></p>
     <% if flash.alert %>
       <% flash.alert.each do |message| %>
         <li><%= message%></li>

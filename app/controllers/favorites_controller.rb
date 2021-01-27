@@ -1,15 +1,10 @@
 class FavoritesController < ApplicationController
 
-    def index
-        @favorites = Favorite.all
-    end
-
     # def new
     #     @favorite = Favorite.new
     # end
 
     def create
-    byebug
         @favorite = Favorite.new(favorite_params)
         if @favorite.save
             puts "Yay! You've got a new Crave!"
@@ -17,9 +12,6 @@ class FavoritesController < ApplicationController
             flash.alert = @user.errors.full_messages
             redirect_to item_path
         end
-    end
-
-    def show
     end
 
     def destroy

@@ -1,4 +1,3 @@
-<p>User's login page: Routes to user's show page. Why "?" in URL</p>
 <%= form_for :user, url: '/users' do |f| %>
  <%= f.label "Username:" %><%= f.text_field :name %>
  <%= f.label "Password:" %><%= f.password_field :password %>
@@ -8,7 +7,9 @@
 <ul>
 <% @users.each do |user| %>
    <li><%= link_to user.name, user_path(user) %></li>
-
-   <% end %>
-
+<% end %>
 </ul>
+
+<p>Create a new account link?</p>
+<p>Remove login & create profile button from header</p>
+

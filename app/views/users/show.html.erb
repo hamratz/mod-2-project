@@ -1,13 +1,16 @@
 <h1>Hello, <%= @user.name %></h1>
 
-<%= link_to "edit profile", edit_user_path(@user) %>
-<p>Your Favorites!</p>
+<p>Your Craves!</p>
 <ul>
 <% @user.favorites.each do |favorite| %>
-    <li><%= link_to favorite.item.name, item_path(favorite.item) %></li>
-    <li><%= button_to "Add to Cart", add_to_cart_path, method: :patch, params: { item_id: favorite.item.id, name: favorite.item.name } %></li>
-    <li><%= button_to "Remove Crave", favorite_path(favorite), method: :delete, params: { user_id: @user.id }, data: { confirm: "Really?" } %></li>
-
+    <li><%= link_to favorite.item.name, item_path(favorite.item) %><br><br>
+    <%= button_to "Add to Cart", add_to_cart_path, method: :patch, params: { item_id: favorite.item.id, name: favorite.item.name } %>
+    <%= button_to "Remove Crave", favorite_path(favorite), method: :delete, params: { user_id: @user.id }, data: { confirm: "Really?" } %></li><br>
 <% end %>
 </ul>
-   <p><%= link_to "Homepage", categories_path%></p>
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+<p><%= link_to "Back to Search", categories_path%></p>
+
+<p>Remove login & create profile button from header</p>
+<p>Add a log out button?</p>
+<p>Add to Cart button needs to be re-routed</p>

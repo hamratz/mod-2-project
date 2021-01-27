@@ -1,10 +1,16 @@
 class UsersController < ApplicationController
+
+    # this will our returning user login
     def index
         @users = User.all
     end
 
     def show
         @user = User.find(params[:id])
+    end
+
+    # create new user page here
+    def new
     end
 
     def create
@@ -41,8 +47,8 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :email)
     end
 
-    def user_p_params
+    def user_password_params
         params.require(:user).permit(:name, :password, :password_confirmation)
-      end
+    end
 
 end

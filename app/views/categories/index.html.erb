@@ -1,10 +1,13 @@
-<h1>Homepage</h1>
-<p>User would select b/w sweet and savory.
-Need to include form to link to either sweet or savory</p>
+<h1>Welcome to Craver</h1>
 
+<h3>Select a crave below:</h3>
 <% @categories.each do |cat| %>
 <ul>
 <li><%= link_to cat.name, category_path(cat)%></li>
 </ul>
 <%end%>
+
+<p>Method for Trending</p>
+<p>Method for Most Popular</p>
+<p>Method for Newest Items - 5</p>
 
