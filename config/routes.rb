@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'categories#index'
   patch '/cart', to: 'carts#update', as: "add_to_cart"
   get '/cart', to: 'carts#show'
-  get '/cart/:id/edit', to: 'carts#edit'
+  get '/cart/edit', to: 'carts#edit'
+  delete '/cart', to: 'carts#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

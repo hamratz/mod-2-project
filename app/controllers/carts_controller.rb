@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 
-
+    # add item to cart - i think we need to move this
     def update
       add_item_to_cart(params[:item_id])
       redirect_to request.referrer
@@ -11,12 +11,12 @@ class CartsController < ApplicationController
     end
 
     def edit
-      byebug
       get_item_from_cart
     end
 
+    # remove item from cart
     def destroy
-
+      render :checkout
     end
 
   end

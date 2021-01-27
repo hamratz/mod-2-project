@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     session[:cart] ||= []
   end
 
+  # why is this broken into the carts controller?
   def add_item_to_cart(item_id)
     cart << item_id
     flash[:notice] = "item added to cart!"
@@ -15,8 +16,6 @@ class ApplicationController < ActionController::Base
   def get_item_from_cart
     @cart_items = Item.find(cart)
   end
-
-
 
 
 end

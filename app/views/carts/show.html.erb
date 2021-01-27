@@ -1,5 +1,4 @@
 <h1>Cart Show Page</h1>
-      <% byebug %>
       <% @cart_items.each do |cart_item| %>
           <li><%= cart_item.name %> $<%= cart_item.price%></li>
       <% end %>
@@ -10,5 +9,5 @@
 
 <p>Total: $<%= total_price.sum(0.0) %></p>
 <p><%= link_to "Continue Shopping", categories_path %></p>
-<%= button_to "Check Out" %><br>
-<%= button_to "Edit Cart", cart_path %>
+<%= button_to "Check Out"  %><br>
+<%= button_to "Edit Cart", cart_edit_path, method: 'get' %>

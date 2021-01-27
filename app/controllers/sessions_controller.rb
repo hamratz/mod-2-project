@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    #login, signup, logout & empty cart
+
     def create
         user = User.find_by(name: params[:name])
     # confirm whether the passwords match
@@ -12,4 +14,5 @@ class SessionsController < ApplicationController
         end
     # redirect appropriately
   end
+  
 end
