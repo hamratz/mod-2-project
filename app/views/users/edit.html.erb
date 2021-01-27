@@ -1,2 +1,8 @@
 <p>User's edit page: Routes to user's show page with new changes</p>
 <p>User can also delete their profile</p>
+<%= form_for @user do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :email %>
+  <%= f.submit %>
+<% end %>
+  <%= button_to "Delete Profile", @user, method: :delete, data: { confirm: "Really?" } %>

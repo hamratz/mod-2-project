@@ -7,14 +7,42 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
+    def create
+       @user = User.create(user_params)
+       if @user.save
+        redirect_to user_path(@user)
+      else
+        flash.alert = @user.errors.full_messages
+        redirect_to users_path
+      end
+    end
+
     def edit
         @user = User.find(params[:id])
     end
 
     def update
+        @user = User.find(params[:id])
+        if @user.update(user_params)
+            redirect_to user_path(@user)
+        else
+            render :edit
+        end
     end
 
     def destroy
+        @user = User.find(params[:id]).destroy
+        redirect_to categories_path
     end
+
+    private
+
+    def user_params
+        params.require(:user).permit(:name, :email)
+    end
+
+    def user_p_params
+        params.require(:user).permit(:name, :password, :password_confirmation)
+      end
 
 end

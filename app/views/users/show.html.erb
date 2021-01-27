@@ -7,5 +7,7 @@
     <li><%= link_to favorite.item.name, item_path(favorite.item) %></li>
     <li><%= button_to "Add to Cart", add_to_cart_path, method: :patch, params: { item_id: favorite.item.id, name: favorite.item.name } %></li>
     <li><%= button_to "Remove Crave", favorite_path(favorite), method: :delete, params: { user_id: @user.id }, data: { confirm: "Really?" } %></li>
+
 <% end %>
 </ul>
+   <p><%= link_to "Homepage", categories_path%></p>
