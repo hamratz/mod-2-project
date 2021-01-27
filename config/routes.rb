@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update, :destroy, :create]
   root 'categories#index'
   patch '/cart', to: 'carts#update', as: "add_to_cart"
+  get '/cart', to: 'cart#show', as: "get_item_from_cart"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
