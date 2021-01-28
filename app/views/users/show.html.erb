@@ -4,7 +4,7 @@
 <ul>
 <% @user.favorites.each do |favorite| %>
     <li><%= link_to favorite.item.name, item_path(favorite.item) %><br><br>
-    <%= button_to "Add to Cart", add_to_cart_path, method: :patch, params: { item_id: favorite.item.id, name: favorite.item.name } %>
+    <%= button_to "Add to Cart", add_to_cart_path(favorite.item), method: :patch %>
     <%= button_to "Remove Crave", favorite_path(favorite), method: :delete, params: { user_id: @user.id }, data: { confirm: "Really?" } %></li><br>
 <% end %>
 </ul>
