@@ -1,10 +1,9 @@
 class CartsController < ApplicationController
 
-  skip_before_action :authorize, only: [:update, :show, :edit, :destory]
+  skip_before_action :authorize, only: [:update, :show, :edit, :destory, :remove_item]
 
     # add item to cart - i think we need to move this
     def update
-      byebug
       cart << params[:item_id]
       flash[:notice] = "item added to cart!"
       redirect_to request.referrer
