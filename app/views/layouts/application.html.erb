@@ -11,14 +11,15 @@
 
   <body>
     <header>
-    
+    <div class="cart">
       <%= flash[:notice] %>
         <h3>My cart</h3>
         <% @cart_items.each do |cart_item| %>
           <li><%= cart_item.name %></li>
         <% end %>
-
+    
         <p><%= button_to "View cart", cart_path, method: "get"%></p>
+        </div>
         <p><%= button_to "Login", users_path, method: "get"%></p>
         <p><%= button_to "Create Profile", users_path, method: "get"%></p>
 
