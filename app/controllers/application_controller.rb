@@ -14,12 +14,12 @@ class ApplicationController < ActionController::Base
   end
 
   def favorites_all
-    fav = Favorite.all.map do |favorite| favorite.item
-    fav.max_by{|item| fav.count(item)}
-    end
+    fav_count = Hash.new(0)
+    Favorite.all.select {|fav| fav_count[fav] += 1}
+    fav_count.sort_by { |fav,number| number}.last[0]
   end
 
-  # why is this broken into the carts controller?
+ 
   def add_item_to_cart(item_id)
     cart << item_id
     flash[:notice] = "item added to cart!"
