@@ -11,16 +11,21 @@
 
   <body>
     <header>
-    
+    <% if current_user %>
+        <%= button_to "Logout", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Signup", signup_path %><br>
+        <%= link_to "Login", login_path %>
+      <% end %>
+
       <%= flash[:notice] %>
         <h3>My cart</h3>
         <% @cart_items.each do |cart_item| %>
-          <li><%= cart_item.name %></li>
+          <% cart_item.name %>
         <% end %>
+        Craves in cart: <%= @cart_items.count %>
 
         <p><%= button_to "View cart", cart_path, method: "get"%></p>
-        <p><%= button_to "Login", users_path, method: "get"%></p>
-        <p><%= button_to "Create Profile", users_path, method: "get"%></p>
 
         <% if flash.alert %>
           <% flash.alert.each do |message| %>

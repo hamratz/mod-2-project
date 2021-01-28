@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  skip_before_action :authorize, only: [:update, :show, :edit, :destory]
 
     # add item to cart - i think we need to move this
     def update

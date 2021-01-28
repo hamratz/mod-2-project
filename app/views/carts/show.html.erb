@@ -7,7 +7,7 @@
            <% cart_item.price %>
       <% end %>
 
-<p>Total: $<%= total_price.sum(0.0) %></p>
+<p>Total: $<%= total_price.sum.round(2) %></p>
 <p><%= link_to "Continue Shopping", categories_path %></p>
 <%= button_to "Check Out"  %><br>
 <%= button_to "Edit Cart", cart_edit_path, method: 'get' %>
