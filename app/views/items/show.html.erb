@@ -1,9 +1,10 @@
 <h1><%= @item.name %></h1>
+<%= image_tag("Square_200x200.png", :alt => "rss feed") %>
 <p>Description: <%= @item.description %></p>
 <p>Price: $<%= @item.price %></p>
 
 
-<%= button_to "Add to Cart", add_to_cart_path, method: :patch, params: { item_id: @item.id, name: @item.name } %><br>
+<%= button_to "Add to Cart", add_to_cart_path(@item), method: :patch %><br>
 <%= button_to "Add Crave", favorites_path, params: {user_id: @user, item_id: @item.id}%>
 <p><%= link_to "Back to search", category_path(@item.category) %></p>
 <p>Need add to favorites</p>

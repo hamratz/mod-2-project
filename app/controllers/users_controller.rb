@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
     # this will our returning user login
     def index
+        @hide_cart = true
         @users = User.all
     end
 
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
     end
 
     def edit
+        @hide_cart = true
         @user = User.find(params[:id])
     end
 

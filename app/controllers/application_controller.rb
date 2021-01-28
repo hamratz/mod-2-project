@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
     before_action :get_item_from_cart
-    # this happens first
 
   def cart
     session[:cart] ||= []
@@ -10,6 +9,5 @@ class ApplicationController < ActionController::Base
   def get_item_from_cart
     @cart_items = Item.find(cart)
   end
-
 
 end

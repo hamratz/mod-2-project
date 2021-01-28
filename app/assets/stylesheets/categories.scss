@@ -1,3 +1,15 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.container {
+    width: 800px;
+    height: auto;
+    align-content: left;
+}
+
+.eachItem {
+    width: 220px;
+    height: auto;
+    float: left;
+}
