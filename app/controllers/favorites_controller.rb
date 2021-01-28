@@ -1,8 +1,8 @@
 class FavoritesController < ApplicationController
 
-    # def new
-    #     @favorite = Favorite.new
-    # end
+    def show
+        @favorites = Favorite.all
+    end
 
     def create
         byebug
@@ -19,7 +19,7 @@ class FavoritesController < ApplicationController
         Favorite.find(params[:id]).destroy
         redirect_to user_path(params[:user_id])
     end
-    
+
     private
 
     def favorite_params

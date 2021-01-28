@@ -7,13 +7,22 @@
 </ul>
 <%end%>
 
+
+<h3>New craves:</h3>
+<% items_all.each do |item|%>
 <ul>
-<li><% new_craves.each do |crave|%></li>
-<%crave.name%>
+<%=item.name%>
+</ul>
+<%end%>
+
+<h3>Trending craves:</h3>
+<%favorites_all.each do |fav|%>
+<ul>
+<%=fav.name%>
 </ul>
 <%end%>
 
 
-<p>Method for Trending</p>
+<p>Done!! Method for Newest Items - 5</p>
 <p>Method for Most Popular</p>
-<p>Method for Newest Items - 5</p>
+<p>Method for Trending</p>

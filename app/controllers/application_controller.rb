@@ -2,10 +2,21 @@ class ApplicationController < ActionController::Base
     before_action :get_item_from_cart
     before_action :authorize
     helper_method :current_user
+    helper_method :items_all, :favorites_all
     # this happens first
 
   def cart
     session[:cart] ||= []
+  end
+
+  def items_all
+    @items = Item.all.last(5)
+  end
+
+  def favorites_all
+    fav = Favorite.all.map do |favorite| favorite.item
+    fav.max_by{|item| fav.count(item)}
+    end
   end
 
   # why is this broken into the carts controller?
