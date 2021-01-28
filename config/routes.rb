@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :favorites, only: [:new, :create, :destroy]
-  resources :items, only: [:show]
+  resources :items, only: [:show, :index]
   resources :users, only: [:index, :show, :edit, :update, :destroy, :create]
   resources :sessions, only: [:create, :new]
   root 'categories#index'

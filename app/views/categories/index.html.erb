@@ -8,8 +8,24 @@
 <%end%>
 
 
+<h3>New craves:</h3>
+<% items_all.each do |item|%>
+<ul>
+<%=item.name%>
+</ul>
+<%end%>
+
+<h3> Craver craves:</h3>
+
+<p><%=favorites_all.item.name%></p>
+
+<h3> Find new crave:</h3>
+<%= link_to "Find new crave", items_path%>
 
 
+
+
+
+<p>Done!! Method for Newest Items - 5</p>
+<p>Done!! Method for Most Popular</p>
 <p>Method for Trending</p>
-<p>Method for Most Popular</p>
-<p>Method for Newest Items - 5</p>
