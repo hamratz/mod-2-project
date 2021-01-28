@@ -7,18 +7,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
     
       <%= flash[:notice] %>
-        <h3>My cart</h3>
-        <% @cart_items.each do |cart_item| %>
-          <li><%= cart_item.name %></li>
+        <% if !@hide_cart %>
+          <h3>My cart</h3>
+          <% @cart_items.each do |cart_item| %>
+            <li><%= cart_item.name %></li>
+          <% end %>
+          <p><%= button_to "View cart", cart_path, method: "get"%></p>
         <% end %>
 
-        <p><%= button_to "View cart", cart_path, method: "get"%></p>
         <p><%= button_to "Login", users_path, method: "get"%></p>
         <p><%= button_to "Create Profile", users_path, method: "get"%></p>
 

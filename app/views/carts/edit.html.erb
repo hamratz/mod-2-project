@@ -1,7 +1,8 @@
 <h1>Edit Cart</h1>
-
+<ul>
 <% @cart_items.each do |cart_item| %>
-    <li><%= cart_item.name %> $<%= cart_item.price%></li>
+    <li><%= cart_item.name %> $<%= cart_item.price%> <%= link_to "Remove", remove_item_path(cart_item), method: 'patch' %></li>
 <% end %>
+</ul>
 <p><%= link_to "Continue Shopping", categories_path %></p>
-<%= button_to "Check Out", cart_edit_path, method: 'delete' %>
+<%= button_to "Check Out", cart_path, method: 'delete' %>
