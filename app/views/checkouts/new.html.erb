@@ -1,0 +1,36 @@
+<h1>Checkout</h1>
+
+<% @cart_items.each do |cart_item| %>
+          <li><%= cart_item.name %> $<%= cart_item.price%></li>
+      <% end %>
+
+      <% total_price = @cart_items.map do |cart_item| %>
+           <% cart_item.price %>
+      <% end %>
+
+<p>Crave Total: $<%= total_price.sum(0.0) %></p>
+
+<h3>Delivery Information:</h3>
+
+<%= form_for @checkout do |f| %>
+
+    <%= f.label "Name" %>
+    <%= f.text_field :user_id %>
+
+    <%= f.label :address%>
+    <%= f.text_field :address%>
+    <%= f.label :address_2 %>
+    <%= f.text_field :address_2 %><br><br>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+    <%= f.label :zip_code %>
+    <%= f.text_field :zip_code %><br><br>
+
+    <%= f.label :item_id %>
+    <%= f.text_field :item_id %><br><br>
+    
+    <%= f.submit %>
+
+<% end %>

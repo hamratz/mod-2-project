@@ -7,39 +7,40 @@
 </ul>
 <%end%>
 
-<div class="eachItem">
-<h3>Most Popular Crave</h3>
-<%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-</div>
+<div class="containerTop">
 
 <div class="eachItem">
-<h3>Newest Crave</h3>
+<h3>#1 Craver Crave</h3>
 <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+<h3><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
+<%= button_to "Add to Cart", add_to_cart_path(favorites_all.item), method: :patch %></h3>
 </div>
 
 <div class="eachItem">
 <h3>Trending Crave</h3>
 <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+<h3><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
+<%= button_to "Add to Cart", add_to_cart_path(favorites_all.item), method: :patch %></h3>
 </div>
 
-<h3>New craves:</h3>
+<div class="eachItem">
+<h3>Find a New Crave</h3>
+<%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+<h3><%= button_to "I'm feeling lucky!", items_path%></h3>
+</div>
+
+</div> 
+
+<div class="container">
+
 <% items_all.each do |item|%>
-<ul>
-<%=item.name%>
-</ul>
+    <div class="eachItem">
+    <h3>Newest Craves</h3>
+        <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+        <h3><%= item.name %> $<%= item.price %></h3>
+    </div>
 <%end%>
 
-<h3> Craver craves:</h3>
-
-<p><%=favorites_all.item.name%></p>
-
-<h3> Find new crave:</h3>
-<%= link_to "Find new crave", items_path%>
+</div>
 
 
-
-
-
-<p>Done!! Method for Newest Items - 5</p>
-<p>Done!! Method for Most Popular</p>
-<p>Method for Trending</p>

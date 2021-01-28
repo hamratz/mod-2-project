@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   patch '/cart/:item_id', to: 'carts#update', as: "add_to_cart"
   get '/cart', to: 'carts#show'
   get '/cart/edit', to: 'carts#edit'
+  get '/checkout', to: 'checkouts#new'
+  post '/checkout', to: 'checkouts#create'
   delete '/cart', to: 'carts#destroy'
   patch '/cart/:item_id/remove_item', to: 'carts#remove_item', as: "remove_item"
   get "signup", to: "users#new"
