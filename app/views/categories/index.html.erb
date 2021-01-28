@@ -26,10 +26,10 @@
 <div class="eachItem">
 <h3>Find a New Crave</h3>
 <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-<h3><%= button_to "I'm feeling lucky!", items_path%></h3>
+<h3><%= button_to "I'm feeling lucky!", items_path, method: :get%></h3>
 </div>
 
-</div> 
+</div>
 
 <div class="container">
 
@@ -37,10 +37,9 @@
     <div class="eachItem">
     <h3>Newest Craves</h3>
         <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-        <h3><%= item.name %> $<%= item.price %></h3>
+        <h4><%= link_to item.name, item_path(item) %><br>$<%= item.price %>
+            <%= button_to "Add to Cart", add_to_cart_path(item), method: :patch %></h4>
     </div>
 <%end%>
 
 </div>
-
-
