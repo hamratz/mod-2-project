@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
-    # skip_before_action :get_item_from_cart, only: [:show, :edit]
-    
+
+  skip_before_action :authorize, only: [:update, :show, :edit, :destory]
+
+    # add item to cart - i think we need to move this
     def update
       byebug
       cart << params[:item_id]
