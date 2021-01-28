@@ -4,11 +4,16 @@
   <%= f.label "Password Confirmation:" %> <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>
 <% end %>
+
 <ul>
 <% @users.each do |user| %>
    <li><%= link_to user.name, user_path(user) %></li>
 <% end %>
 </ul>
 
+<<<<<<< HEAD
 <p>Create a new account link?</p>
 <p>Remove login & create profile button from header</p>
+=======
+
+>>>>>>> james

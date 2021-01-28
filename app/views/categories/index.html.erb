@@ -1,12 +1,26 @@
 <h1>Welcome to Craver</h1>
 
-<h3>Select a crave below:</h3>
+<h3>Search for a Crave:</h3>
 <% @categories.each do |cat| %>
 <ul>
 <li><%= link_to cat.name, category_path(cat)%></li>
 </ul>
 <%end%>
 
+<div class="eachItem">
+<h3>Most Popular Crave</h3>
+<%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+</div>
+
+<div class="eachItem">
+<h3>Newest Crave</h3>
+<%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+</div>
+
+<div class="eachItem">
+<h3>Trending Crave</h3>
+<%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+</div>
 
 <h3>New craves:</h3>
 <% items_all.each do |item|%>

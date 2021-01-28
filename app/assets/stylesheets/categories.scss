@@ -1,17 +1,15 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-$font-stack:    Helvetica, sans-serif;
-$primary-color: rgb(46, 34, 214);
 
-body {
-  background-color: lightgoldenrodyellow;
-  font: 100% $font-stack;
-  color: $primary-color;
+.container {
+    width: 800px;
+    height: auto;
+    align-content: left;
 }
 
-h1 {
-    text-align: center;
-
-
+.eachItem {
+    width: 220px;
+    height: auto;
+    float: left;
 }

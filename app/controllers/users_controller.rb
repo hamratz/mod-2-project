@@ -2,9 +2,10 @@ class UsersController < ApplicationController
     skip_before_action :authorize, only: [:new, :create]
 
     # this will our returning user login
-    # def index
-    #     @users = User.all
-    # end
+    def index
+        @hide_cart = true
+        @users = User.all
+    end
 
     def show
         @user = User.find(params[:id])
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
     end
 
     def edit
+        @hide_cart = true
         @user = User.find(params[:id])
     end
 

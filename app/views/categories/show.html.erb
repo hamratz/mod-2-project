@@ -1,12 +1,18 @@
 <h1><%= @category.name %></h1>
 <p><%= link_to "Back to search", categories_path %></p>
 
-<%@category.items.each do |item|%>
-<ul>
-<h3><li><%= link_to item.name, item_path(item) %> $<%= item.price %>
-<%= button_to "Add to Cart", add_to_cart_path(item), method: :patch %></li></h3>
-</ul>
+<div class="container">
+<% @category.items.each do |item|%>
+
+    <div class="eachItem">
+        <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+        
+            <h4><%= link_to item.name, item_path(item) %><br>$<%= item.price %>
+            <%= button_to "Add to Cart", add_to_cart_path(item), method: :patch %></h4>
+    </div>
+
 <%end%>
+</div>
 
 <p>Add to favorites button</p>
 <p>Trending highlight</p>
