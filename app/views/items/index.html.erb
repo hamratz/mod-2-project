@@ -1,0 +1,7 @@
+<h3>Your next crave is</h3>
+<h3>!!!!<%=@items.name%>!!!!</h3>
+
+<p>Description: <%= @items.description %></p>
+<p>Price: $<%= @items.price %></p>
+
+<%= button_to "Add to Cart", add_to_cart_path, method: :patch, params: { item_id: @items.id, name: @items.name } %><br>
