@@ -15,7 +15,7 @@
 <h3><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
 <%= button_to "Add to Cart", add_to_cart_path(favorites_all.item), method: :patch %></h3>
 </div>
-
+</div> 
 <div class="eachItem">
 <h3>Trending Crave</h3>
 <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
@@ -29,7 +29,6 @@
 <h3><%= button_to "I'm feeling lucky!", items_path, method: :get %></h3>
 </div>
 
-</div> 
 
 <div class="clearer"></div>
 

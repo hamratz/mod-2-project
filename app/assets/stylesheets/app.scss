@@ -1,3 +1,46 @@
+@font-face {
+font-family: 'Alba';
+src: url('app/assets/fonts/Alba-Bold.ttf') format('truetype');
+}
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: rgb(46, 34, 214);
+body {
+  background-color: lightgoldenrodyellow;
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+     
+.cravefont {
+        font-family: Alba;
+        font-size: 200px;
+        text-align: center;
+        position: fixed;
+        top: 0px;
+        background-color: rgb(255, 0, 128);
+    }
+
+.top-nav {
+        position: fixed;
+        top: 40;
+        width: 100%;
+        list-style-type: none;
+        display: flex;
+        background-color: aqua;
+        list-style-position: center;
+        overflow: hidden;
+        a:hover {
+                background-color: #111;
+
+              }
+      }
+.textpad {
+        columns: 6;
+        text-align: center;
+        padding-left: 50px;
+        
+}
+
 .cart {
         display: block;
         float: right;

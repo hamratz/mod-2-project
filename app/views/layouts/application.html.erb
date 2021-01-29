@@ -12,12 +12,31 @@
 
   <body>
     <header>
+    
+    <div class="cravefont">Craver</div>
+   
+    <div class="top-nav">
+    <p class="textpad">Home</p>
+    <p class="textpad">Login</p> 
+    <p class="textpad">Signup</p> 
+    <p class="textpad">View Cart</p>
+    
+     
+    
+    <p class="textpad">
     <% if current_user %>
         <%= button_to "Logout", logout_path, method: :delete %>
+        
       <% else %>
         <%= link_to "Signup", signup_path %><br>
+        </p>
+        <p class="textpad">
         <%= link_to "Login", login_path %>
+        
       <% end %>
+    </p>
+      </div>
+
     <div class="cart">
       <%= flash[:notice] %>
         <% if !@hide_cart %>
@@ -29,6 +48,7 @@
           <p><%= button_to "View cart", cart_path, method: "get"%></p>
         <% end %>
         </div>
+        
 
         <% if flash.alert %>
           <% flash.alert.each do |message| %>
