@@ -1,6 +1,6 @@
 <h1>Hello, <%= @user.name %></h1>
 
-<p>Your Craves!</p>
+<p>Your Craves</p>
 <ul>
 <% @user.favorites.each do |favorite| %>
     <li><%= link_to favorite.item.name, item_path(favorite.item) %><br><br>
@@ -10,7 +10,3 @@
 </ul>
 <%= link_to "Edit Profile", edit_user_path(@user) %>
 <p><%= link_to "Back to Search", categories_path%></p>
-
-<p>Remove login & create profile button from header</p>
-<p>Add a log out button?</p>
-<p>Add to Cart button needs to be re-routed</p>

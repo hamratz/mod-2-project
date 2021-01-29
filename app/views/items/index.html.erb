@@ -4,4 +4,5 @@
 <p>Description: <%= @items.description %></p>
 <p>Price: $<%= @items.price %></p>
 
-<%= button_to "Add to Cart", add_to_cart_path, method: :patch, params: { item_id: @items.id, name: @items.name } %><br>
+<%= button_to "Add to Cart", add_to_cart_path(@items), method: :patch %><br>
+<p><%= link_to "Back to search", categories_path %></p>
