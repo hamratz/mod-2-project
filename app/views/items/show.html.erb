@@ -3,6 +3,21 @@
 <p>Description: <%= @item.description %></p>
 <p>Price: $<%= @item.price %></p>
 
+<h3>#1 Craver Crave</h3>
+<h3><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
+<%= button_to "Add to Cart", add_to_cart_path(favorites_all.item), method: :patch %></h3>
+
+
+
+<h3>Trending Crave</h3>
+
+<h3><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
+<%= button_to "Add to Cart", add_to_cart_path(favorites_all.item), method: :patch %></h3>
+
+
+<h3>Find a New Crave</h3>
+
+<h3><%= button_to "I'm feeling lucky!", items_path, method: :get%></h3>
 
 <%= button_to "Add to Cart", add_to_cart_path(@item), method: :patch %><br>
 <%= button_to "Add Crave", favorites_path, params: {user_id: @user, item_id: @item.id}%>

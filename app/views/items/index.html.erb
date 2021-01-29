@@ -5,3 +5,4 @@
 <p>Price: $<%= @items.price %></p>
 
 <%= button_to "Add to Cart", add_to_cart_path(@items), method: :patch%><br>
+<%= button_to "Add Crave", favorites_path, params: {user_id: @user, item_id: @items.id}%>

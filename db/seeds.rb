@@ -11,9 +11,9 @@ Item.destroy_all
 Favorite.destroy_all
 Category.destroy_all
 
-james = User.create(name: "James", email: "james@gmail.com", password:"pwd", password_confirmation: "pwd")
-marty = User.create(name: "marty", email: "marty@gmail.com", password:"pwd", password_confirmation: "pwd")
-esma = User.create(name: "esma", email: "esma@gmail.com", password:"pwd", password_confirmation: "pwd")
+james = User.create(name: "James", email: "james@gmail.com", password:"password", password_confirmation: "password")
+marty = User.create(name: "marty", email: "marty@gmail.com", password:"password", password_confirmation: "password")
+esma = User.create(name: "esma", email: "esma@gmail.com", password:"password", password_confirmation: "password")
 
 user_id = User.all.map { |user| user.id }
 
