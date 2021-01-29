@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:show]
   resources :favorites, only: [:new, :create, :destroy]
   resources :items, only: [:show, :index]
-  resources :users, only: [:index, :show, :edit, :update, :destroy, :create]
-  resources :sessions, only: [:create, :new]
+  resources :users, only: [ :show, :edit, :update, :destroy, :create ]
+  resources :sessions, only: [ :create, :new ]
   root 'categories#index'
   patch '/cart/:item_id', to: 'carts#update', as: "add_to_cart"
   get '/cart', to: 'carts#show'

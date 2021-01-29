@@ -9,11 +9,13 @@ class FavoritesController < ApplicationController
     end
 
     def create
-        if @favorite = Favorite.where("user_id: = #{params[:user_id]} AND item_id: = #{params[:item_id]}")
+        # byebug
+        # if @favorite = Favorite.where("user_id: = #{params[:user_id]} AND item_id: = #{params[:item_id]}")
+        new_fav = Favorite.new(user_id: params[:user_id], item_id: params[:item_id])
+        if new_fav == Favorite.where(user_id: params[:user_id], item_id: params[:item_id])
             flash[:notice] = "This is already one of your Craves."
         else
-            @favorite = Favorite.new(user_id: params[:user_id], item_id: params[:item_id])
-            @favorite.save
+            new_fav.save
             flash[:notice] = "Yay! You've got a new Crave!"
         end
         redirect_to request.referrer

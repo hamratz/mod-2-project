@@ -3,10 +3,11 @@
 <p>Your Craves</p>
 <ul>
 <% @user.favorites.each do |favorite| %>
+    <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
     <li><%= link_to favorite.item.name, item_path(favorite.item) %><br><br>
     <%= button_to "Add to Cart", add_to_cart_path(favorite.item), method: :patch %>
     <%= button_to "Remove Crave", favorite_path(favorite), method: :delete, params: { user_id: @user.id }, data: { confirm: "Really?" } %></li><br>
 <% end %>
 </ul>
 <%= link_to "Edit Profile", edit_user_path(@user) %>
-<p><%= link_to "Back to Search", categories_path%></p>
+<p><%= link_to "Back to Search", root_path%></p>

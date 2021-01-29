@@ -1,12 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :authorize, only: [:new, :create]
 
-    # this will our returning user login
-    def index
-        @hide_cart = true
-        @users = User.all
-    end
-
     def show
         @user = User.find(params[:id])
         redirect_to user_path(current_user) if @user != current_user
