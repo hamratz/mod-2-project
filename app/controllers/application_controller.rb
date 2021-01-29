@@ -30,6 +30,7 @@ class ApplicationController < ActionController::Base
     @cart_items = Item.find(cart)
   end
 
+
   #sessions methods below
   def current_user
     User.find(session[:user_id]) if session[:user_id]

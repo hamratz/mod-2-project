@@ -13,7 +13,8 @@
   <body>
     <header>
     <% if current_user %>
-        <%= button_to "Logout", logout_path, method: :delete %>
+        <%= button_to "Logout", logout_path, method: :delete %><br>
+        <%= button_to current_user.name, user_path(session[:user_id]), method: :get%>
       <% else %>
         <%= link_to "Signup", signup_path %><br>
         <%= link_to "Login", login_path %>
@@ -23,7 +24,6 @@
         <% if !@hide_cart %>
           <h3>My cart</h3>
           <% @cart_items.each do |cart_item| %>
-            <li><%= cart_item.name %></li>
           <% end %>
         Craves in cart: <%= @cart_items.count %>
           <p><%= button_to "View cart", cart_path, method: "get"%></p>

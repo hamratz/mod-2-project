@@ -4,11 +4,8 @@ class ItemsController < ApplicationController
         @items = Item.all.shuffle.first
     end
 
-
     def show
         @item = Item.find(params[:id])
     end
-
-
 
 end

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     skip_before_action :authorize, only: [:new, :create]
 
+
     # this will our returning user login
     def index
         @hide_cart = true

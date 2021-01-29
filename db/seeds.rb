@@ -17,7 +17,7 @@ esma = User.create(name: "esma", email: "esma@gmail.com", password:"password", p
 
 user_id = User.all.map { |user| user.id }
 
-
+Image.create(Unsplash::Photo.search("dessert"))
 
 sweet = Category.create(name: "Sweet")
 savory = Category.create(name: "Savory")

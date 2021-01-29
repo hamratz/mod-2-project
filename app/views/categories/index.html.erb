@@ -1,4 +1,10 @@
+
+ <% if current_user %>
+        <h1>Welcome to Craver, <%= current_user.name.capitalize%></h1><br>
+     <% else %>
 <h1>Welcome to Craver</h1>
+<% end %>
+
 
 <h3>Search for a Crave:</h3>
 <% @categories.each do |cat| %>
