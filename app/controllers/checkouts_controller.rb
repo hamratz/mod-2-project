@@ -6,16 +6,12 @@ class CheckoutsController < ApplicationController
     end
 
     def create
-        @checkout = Checkout.new(checkout_params)
-        @checkout.save
+        session[:cart].each do |id|
+            Checkout.create(item_id: id.to_i, user_id: session[:user_id])
+        end
+        session.delete(:cart)
         flash[:notice] = "Thank you! Your Craves are on the way!"
-        redirect_to root
-    end
-
-    private
-
-    def checkout_params
-        params.require(:checkout).permit(:address, :address_2, :city, :state, :zip_code, :user_id, :item_id )
+        redirect_to root_path
     end
 
 end

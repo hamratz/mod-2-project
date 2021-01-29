@@ -5,6 +5,6 @@
 
 
 <%= button_to "Add to Cart", add_to_cart_path(@item), method: :patch %><br>
-<%= button_to "Add Crave", favorites_path, params: {user_id: @user, item_id: @item.id}%>
+<%= button_to "Add Crave", favorites_path, params: { user_id: session[:user_id], item_id: @item.id } %>
 <p><%= link_to "Back to search", category_path(@item.category) %></p>
-<p>Need add to favorites</p>
+

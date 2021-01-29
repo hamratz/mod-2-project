@@ -45,15 +45,12 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        @user = User.find(params[:id]).destroy
+        byebug
+        @user = User.find(session[:user_id]).destroy
         redirect_to categories_path
     end
 
     private
-
-    # def user_params
-    #     params.require(:user).permit(:name, :email)
-    # end
 
     def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation)

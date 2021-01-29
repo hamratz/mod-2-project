@@ -26,10 +26,12 @@
 <div class="eachItem">
 <h3>Find a New Crave</h3>
 <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-<h3><%= button_to "I'm feeling lucky!", items_path%></h3>
+<h3><%= button_to "I'm feeling lucky!", items_path, method: :get %></h3>
 </div>
 
 </div> 
+
+<div class="clearer"></div>
 
 <div class="container">
 

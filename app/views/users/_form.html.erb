@@ -1,0 +1,36 @@
+<%= form_for @user do |f| %>
+
+  <%= f.label "First Name:" %>
+  <%= f.text_field :first_name %>
+  <%= f.label "Last Name:" %>
+  <%= f.text_field :last_name %>
+  <br><br>
+
+  <%= f.label "Username:" %>
+  <%= f.text_field :name %>
+
+  <p>We promise not spam you.</p>
+  <%= f.label "Email:" %>
+  <%= f.text_field :email %>
+
+  <p>Minumun of 7 letters.</p>
+  <%= f.label "Password:" %>
+  <%= f.password_field :password %>
+  <%= f.label "Confirm Password:" %>
+  <%= f.password_field :password_confirmation %>
+
+  <p>Enter your address for a quicker checkout.</p>
+  <%= f.label "Address:" %>
+  <%= f.text_field :address %>
+  <%= f.label "Address 2:" %>
+  <%= f.text_field :address_2 %><br><br>
+  <%= f.label "City:" %>
+  <%= f.text_field :city %>
+  <%= f.label "State:" %>
+  <%= f.text_field :state %>
+  <%= f.label "Zip Code:" %>
+  <%= f.text_field :zip_code %>
+
+  <br><br>
+  <%= f.submit %>
+<% end %>
