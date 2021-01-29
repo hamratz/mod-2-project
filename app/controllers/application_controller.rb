@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def items_all
-    @items = Item.all.last(5)
+    @items = Item.all.last(10)
   end
 
   def favorites_all
