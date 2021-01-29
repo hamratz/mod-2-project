@@ -1,8 +1,16 @@
-<h3>Your next crave is</h3>
-<h3>!!!!<%=@items.name%>!!!!</h3>
+<div class="itemsContainer">
+<p><%= link_to "Back to search", root_path %></p>
+<h1>Random Crave Selected</h1>
+<h2>!!!!<%=@items.name%>!!!!</h2>
 
-<p>Description: <%= @items.description %></p>
-<p>Price: $<%= @items.price %></p>
+<div class="clearer"></div>
 
-<%= button_to "Add to Cart", add_to_cart_path(@items), method: :patch %><br>
-<p><%= link_to "Back to search", categories_path %></p>
+<%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+<div class="descpBox">
+<p><strong>Description: <%= @items.description %></strong></p>
+<p><strong>Price: $<%= @items.price %></strong></p>
+
+<div class="button"><%= button_to "Add to Cart", add_to_cart_path(@items), method: :patch %></div>
+<div class="button"><%= button_to "Add Crave", favorites_path, params: { user_id: session[:user_id], item_id: @items.id } %></div>
+</div>
+</div>

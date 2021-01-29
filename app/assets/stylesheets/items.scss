@@ -1,3 +1,38 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.itemsContainer {
+    width: 850px;
+    height: auto;
+    margin: auto;
+
+}
+
+.descpBox {
+    width: 600px;
+    height: auto;
+    margin-right: 50px;
+    float: left;
+    font-size: 16px;
+    background-color: lightgrey;
+    padding: 15px;
+}
+.button {
+    float: left;
+    padding-right: 10px;
+}
+
+.editCart {
+    width: 500px;
+    height: auto;
+    margin-right: 50px;
+    float: left;
+    font-size: 16px;
+    background-color: lightgrey;
+    padding: 15px;
+}
+
+.image {
+    float: left;
+    padding-right: 20px;
+}

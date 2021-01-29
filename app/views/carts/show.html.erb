@@ -1,14 +1,18 @@
-<h1>Cart Show Page</h1>
+<div class="itemsContainer">
+<h1>Your Cart</h1>
+<p><%= link_to "Continue Shopping", root_path %></p>
+
       <% @cart_items.each do |cart_item| %>
-          <li><%= cart_item.name %> $<%= cart_item.price%></li>
+          <h4><li><%= cart_item.name %> $<%= cart_item.price%></li></h4>
       <% end %>
 
       <% total_price = @cart_items.map do |cart_item| %>
            <% cart_item.price %>
       <% end %>
 
-<p>Crave Total: $<%= total_price.sum(0.0).round(2) %></p>
-<p><%= link_to "Continue Shopping", categories_path %></p>
-<%= button_to "Check Out", checkout_path, method: 'post' %><br>
-<%= button_to "Edit Cart", cart_edit_path, method: 'get' %>
+<p><strong>Crave Total: $<%= total_price.sum(0.0).round(2) %></strong></p>
+
+<div class="button"><%= button_to "Check Out", checkout_path, method: 'post' %></div>
+<div class="button"><%= button_to "Edit Cart", cart_edit_path, method: 'get' %></div>
+</div>
 

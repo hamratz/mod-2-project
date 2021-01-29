@@ -1,10 +1,17 @@
-<h1><%= @item.name %></h1>
-<%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-<p>Description: <%= @item.description %></p>
-<p>Price: $<%= @item.price %></p>
-
-
-<%= button_to "Add to Cart", add_to_cart_path(@item), method: :patch %><br>
-<%= button_to "Add Crave", favorites_path, params: { user_id: session[:user_id], item_id: @item.id } %>
+<div class="itemsContainer">
 <p><%= link_to "Back to search", category_path(@item.category) %></p>
 
+<h1><%= @item.name %></h1>
+
+<div class="clearer"></div>
+
+<div class="descpBox">
+<div class="image"><%= image_tag("Square_200x200.png", :alt => "rss feed") %></div>
+<p><strong>Description:</strong> <%= @item.description %></p>
+<p><strong>Price:</strong> $<%= @item.price %></p>
+
+
+<div class="button"><%= button_to "Add to Cart", add_to_cart_path(@item), method: :patch %></div>
+<div class="button"><%= button_to "Add Crave", favorites_path, params: { user_id: session[:user_id], item_id: @item.id } %></div>
+</div>
+</div>

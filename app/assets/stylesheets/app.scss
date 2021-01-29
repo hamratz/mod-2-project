@@ -1,9 +1,112 @@
-.cart {
-        display: block;
-        float: right;
-        background-color: lightpink;
-        padding: 10px 20px 40px 15px;
-        font-size: 8px;
-        width: 300px;
+@font-face {
+        font-family: 'Alba';
+        src: url('Alba-Bold.TTF') format('truetype');
+        }
+        
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(46, 34, 214);
+
+h1 {
+        padding-left: 10px;
+
 }
-    
+
+body {
+        margin: 0 auto;
+        background-color: lightgoldenrodyellow;
+        font: 100% $font-stack;
+        color: $primary-color;
+}
+             
+        .cravefont {
+                font-family: Alba;
+                font-size: 200px;
+                text-align: center;
+                
+                top: 0px;
+                background-color: rgb(255, 0, 128);
+            }
+        
+        .top-nav {
+                top: 40px;
+                width: 100%;
+                display: flex;
+                background-color: aqua;      
+        }
+        
+        .textpad {
+                columns: 3;
+                text-align: center;
+                padding-left: 150px;
+                
+        }
+        
+        .cart {
+                
+                float: right;
+                background-color: lightpink;
+                padding: 10px 20px 2px 15px;
+                margin-top: 227px;
+                font-size: 12px;
+                width: 300px;
+                height: 75px;
+        }
+            
+        .fixedHeader {
+                position: fixed;
+                width: 100%;
+                display: flex;
+        }
+        
+        .cartButton {
+                float: left;
+                padding-right: 10px;
+        
+        }
+
+        .footer {
+                width: 100%;
+                display: flex;
+                background-color: aqua;
+                // position: fixed;
+                left: 0;
+                bottom: 0;
+                text-align: center;
+        }
+
+
+        input[type=text], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+              }
+
+              input[type=password], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+              }
+              
+              input[type=submit] {
+                width: 100%;
+                background-color: rgb(255, 0, 128);
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+              }
+              
+              input[type=submit]:hover {
+                background-color: rgb(209, 33, 121);
+              }
+

@@ -6,11 +6,10 @@
 
     <div class="eachItem">
         <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-        
+    
             <h4><%= link_to item.name, item_path(item) %><br>$<%= item.price %>
             <%= button_to "Add to Cart", add_to_cart_path(item), method: :patch %></h4>
     </div>
-
 <%end%>
 </div>
 

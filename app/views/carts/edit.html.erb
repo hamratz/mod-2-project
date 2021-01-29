@@ -1,8 +1,20 @@
+<div class="itemsContainer">
 <h1>Edit Cart</h1>
-<ul>
+<p><%= link_to "Continue Shopping", root_path %></p>
+
+<div class="clearer"></div>
+
 <% @cart_items.each do |cart_item| %>
-    <li><%= cart_item.name %> $<%= cart_item.price%> <%= link_to "Remove", remove_item_path(cart_item), method: 'patch' %></li>
+<div class="editCart">
+    <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
+    <h4><%= cart_item.name %> $<%= cart_item.price%></h4>
+    <p><strong>Description:</strong> <%= cart_item.description %></p>
+    <div class="button"><%= button_to "Remove", remove_item_path(cart_item), method: 'patch' %></div>
+    <div class="button"><%= button_to "Check Out", cart_path, method: 'delete' %></div>
+</div>
 <% end %>
-</ul>
-<p><%= link_to "Continue Shopping", categories_path %></p>
-<%= button_to "Check Out", cart_path, method: 'delete' %>
+
+
+
+
+</div>

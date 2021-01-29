@@ -1,5 +1,6 @@
-<h1>login page</h1>
+<h1>Login</h1>
 
+<div class="formContainer">
 <%= form_tag sessions_path do %>
   <%= label_tag "Name" %>
   <%= text_field_tag :name %>
@@ -7,3 +8,4 @@
   <%= password_field_tag :password %>
   <%= submit_tag "Sign In" %>
 <% end %>
+</div>

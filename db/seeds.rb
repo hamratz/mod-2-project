@@ -11,9 +11,13 @@ Item.destroy_all
 Favorite.destroy_all
 Category.destroy_all
 
-james = User.create(name: "James", email: "james@gmail.com", password:"pwd", password_confirmation: "pwd" )
-marty = User.create(name: "marty", email: "marty@gmail.com", password:"pwd", password_confirmation: "pwd")
-esma = User.create(name: "esma", email: "esma@gmail.com", password:"pwd", password_confirmation: "pwd")
+User.create(name: "esma", first_name: "esma", last_name: "guest", email: "email", address: "address", city: "city", state: "state", zip_code: "123", password: "password", password_confirmation: "password")
+User.create(name: "marty", first_name: "marty", last_name: "guest", email: "email", address: "address", city: "city", state: "state", zip_code: "123", password: "password", password_confirmation: "password")
+User.create(name: "james", first_name: "james", last_name: "guest", email: "email", address: "address", city: "city", state: "state", zip_code: "123", password: "password", password_confirmation: "password")
+User.create(name: "guest", first_name: "guest", last_name: "guest", email: "email", address: "address", city: "city", state: "state", zip_code: "123", password: "password", password_confirmation: "password")
+# james = User.create(name: "James", email: "james@gmail.com", password:"pwd", password_confirmation: "pwd" )
+# marty = User.create(name: "marty", email: "marty@gmail.com", password:"pwd", password_confirmation: "pwd")
+# esma = User.create(name: "esma", email: "esma@gmail.com", password:"pwd", password_confirmation: "pwd")
 
 user_id = User.all.map { |user| user.id }
 
@@ -23,7 +27,7 @@ savory = Category.create(name: "Savory")
 
 category_id = Category.all.map { |category| category.id }
 
-10.times do
+50.times do
     Item.create(name: Faker::Food.dish, description: Faker::Food.description, price:rand(1.25..30.0).round(2), category_id: category_id.sample)
 end
 

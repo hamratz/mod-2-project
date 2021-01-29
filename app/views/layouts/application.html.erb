@@ -12,23 +12,30 @@
 
   <body>
     <header>
-    <% if current_user %>
-        <%= button_to "Logout", logout_path, method: :delete %>
-      <% else %>
-        <%= link_to "Signup", signup_path %><br>
-        <%= link_to "Login", login_path %>
-      <% end %>
-    <div class="cart">
+
+      <div class="cart">
       <%= flash[:notice] %>
         <% if !@hide_cart %>
-          <h3>My cart</h3>
-          <% @cart_items.each do |cart_item| %>
-            <li><%= cart_item.name %></li>
-          <% end %>
+        <div class="cartButton"><%= button_to "View cart", cart_path, method: "get"%></div><br>
         Craves in cart: <%= @cart_items.count %>
-          <p><%= button_to "View cart", cart_path, method: "get"%></p>
+          
         <% end %>
         </div>
+
+        <div class="cravefont">Craver</div>
+
+
+      <div class="top-nav">
+        <p class="textpad"><%= link_to "HOME", root_path %></p>
+          <% if current_user %>
+          <p class="textpad"><%= link_to "MY PROFILE", user_path(session[:user_id]), method: :get %></p>
+            <p class="textpad"><%= link_to "LOGOUT", logout_path, method: :delete %></p>
+          <% else %>
+            <p class="textpad"><%= link_to "SIGN UP", signup_path %></p>
+        <p class="textpad"><%= link_to "LOGIN", login_path %></p>
+        <% end %>
+      </div>
+
 
         <% if flash.alert %>
           <% flash.alert.each do |message| %>
@@ -37,6 +44,10 @@
       <% end %>
 
     </header>
+
     <%= yield %>
+
+<div class="footer"><p>Craver Application by Esma Sherwani, James Sapp & Marty Warfel</p></div>
+
   </body>
 </html>

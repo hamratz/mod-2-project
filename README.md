@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ruby on Rails Project
+### Collaborators: Marty Warfel, Esma Sherwani, James Sapp
 
-Things you may want to cover:
+## OVERVIEW
+* Welcome to Craver!
+* This web app is designed to excecute a series of actions listed below :
+  * A user is able to browser available craves that are both etiher sweet or savory
+  * A user is able to view the newest craves, trending craves and find a new crave
+  * A user is able to view a details description of their crave along with the price
+  * A user is able to add a crave to their cart and checkout without logging in
+  * A user is able to create a Crave account
+  * A user is able to add their favorites to their Crave profile
+  * A user is able to edit or delete their Crave profile
 
-* Ruby version
+## INSTALL
+* Fork and clone the repository
+* cd into appropriate directory
 
-* System dependencies
+# Get appropriate dependencies
+* run bundle install
 
-* Configuration
+# Initialize the database
+* rake db:migrate
+* rake db:seed
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## DEPLOY program
+* run rails s on terminal
+* open browser and type in: localhost:3000

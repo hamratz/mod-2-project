@@ -1,3 +1,4 @@
+<div class="formContainer">
 <%= form_for @user do |f| %>
 
   <%= f.label "First Name:" %>
@@ -9,17 +10,16 @@
   <%= f.label "Username:" %>
   <%= f.text_field :name %>
 
-  <p>We promise not spam you.</p>
   <%= f.label "Email:" %>
   <%= f.text_field :email %>
 
-  <p>Minumun of 7 letters.</p>
+  <p><strong>Minumun of 7 letters</strong></p>
   <%= f.label "Password:" %>
   <%= f.password_field :password %>
   <%= f.label "Confirm Password:" %>
   <%= f.password_field :password_confirmation %>
 
-  <p>Enter your address for a quicker checkout.</p>
+  <p><strong>Enter your address for a quicker checkout.</strong></p>
   <%= f.label "Address:" %>
   <%= f.text_field :address %>
   <%= f.label "Address 2:" %>
@@ -34,3 +34,4 @@
   <br><br>
   <%= f.submit %>
 <% end %>
+</div>

@@ -1,47 +1,58 @@
+<% if current_user %>
+        <h1>Welcome, <%= current_user.name.capitalize%></h1><br>
+     <% else %>
 <h1>Welcome to Craver</h1>
+<% end %>
 
-<h3>Search for a Crave:</h3>
+
+<h1>Search for a Crave:</h1>
+
 <% @categories.each do |cat| %>
-<ul>
-<li><%= link_to cat.name, category_path(cat)%></li>
-</ul>
+    <ul>
+        <li><%= link_to cat.name, category_path(cat)%></li>
+    </ul>
 <%end%>
+
+<div class="container">
 
 <div class="containerTop">
 
 <div class="eachItem">
-<h3>#1 Craver Crave</h3>
+<h2><span style="color:white">#1 Craver Crave</span></h2>
 <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-<h3><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
-<%= button_to "Add to Cart", add_to_cart_path(favorites_all.item), method: :patch %></h3>
+<h3><span style="color:white"><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
+<%= button_to "ADD TO CART", add_to_cart_path(favorites_all.item), method: :patch %></span></h3>
 </div>
 
 <div class="eachItem">
-<h3>Trending Crave</h3>
+<h2><span style="color:white">Trending Crave</span></h2>
 <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-<h3><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
-<%= button_to "Add to Cart", add_to_cart_path(favorites_all.item), method: :patch %></h3>
+<h3><span style="color:white"><%= link_to favorites_all.item.name, item_path(favorites_all.item) %> $<%=favorites_all.item.price%>
+<%= button_to "ADD TO CART", add_to_cart_path(favorites_all.item), method: :patch %></span></h3>
 </div>
 
 <div class="eachItem">
-<h3>Find a New Crave</h3>
+<h2><span style="color:white">Find a New Crave</span></h2>
 <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-<h3><%= button_to "I'm feeling lucky!", items_path, method: :get %></h3>
+<h3><span style="color:white">Random crave?
+<%= button_to "I'M FEELING LUCKY!", items_path, method: :get %></h3>
 </div>
 
 </div> 
+<h1>Latest Craves</h1>
 
-<div class="clearer"></div>
-
-<div class="container">
 
 <% items_all.each do |item|%>
     <div class="eachItem">
-    <h3>Newest Craves</h3>
         <%= image_tag("Square_200x200.png", :alt => "rss feed") %>
-        <h3><%= item.name %> $<%= item.price %></h3>
+        <h3><%= link_to item.name, item_path(item) %><br>$<%= item.price %><%= button_to "Add to Cart", add_to_cart_path(item), method: :patch %></h3>
     </div>
 <%end%>
+
+
+
+
+
 
 </div>
 

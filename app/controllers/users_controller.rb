@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @hide_cart = true
         @user = User.find(params[:id])
     end
 
